@@ -1,0 +1,159 @@
+.product-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.product-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.discount-price{
+display: flex;
+ justify-content:center;
+  position:relative;
+  border-radius:100% ;
+  /* margin-top: 20px;  */
+  margin-left: 50px;
+    width: 300px;
+    height: 0px;
+   
+}
+
+.discount-text{
+background-color: red;
+  font-weight: bold;
+display: flex;
+align-items: center;
+justify-content:center;
+  position:relative;
+  border-radius:100% ; 
+    width: 50px;
+  height: 40px; 
+}
+.product-card {
+  position: relative;
+  width: 250px;
+  height: 350px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.product-card:hover {
+  
+  transform: translateY(-10px); /* Slight hover effect */
+}
+
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 20px;
+  text-align: left;
+}
+
+.product-info h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.product-info p {
+  font-size: 1rem;
+  color: #777;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.discount {
+  color: #e74c3c;
+  font-size: 1rem;
+  margin-left: 10px;
+}
+
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.product-card:hover .hover-overlay {
+  opacity: 1;
+}
+.product-card:hover .discount-price{
+  opacity: 0;
+}
+
+.add-to-cart {
+  padding: 10px 20px;
+  background-color: #f39c12;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #e67e22;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+}
+
+.actions span {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.actions span:hover {
+  color: #f39c12;
+}
+
+.show-more {
+  margin-top: 40px;
+  padding: 10px 20px;
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.show-more:hover {
+  background-color: #e67e22;
+}

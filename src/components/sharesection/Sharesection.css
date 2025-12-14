@@ -1,0 +1,84 @@
+.share-grid {
+  width: 100%;
+  max-width: 1350px;
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 18px;
+}
+
+/* All images */
+.share-grid .item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* ============================
+   EXACT SAME POSITIONS
+============================ */
+
+/* LEFT TALL IMAGE */
+.item1 {
+  grid-column: 1 / span 3;
+  grid-row: 1 / span 4;
+}
+
+/* CENTER DESK IMAGE */
+.item2 {
+  grid-column: 4 / span 5;
+  grid-row: 1 / span 3;
+}
+
+/* RIGHT TALL BEDROOM IMAGE */
+.item3 {
+  grid-column: 9 / span 4;
+  grid-row: 1 / span 4;
+}
+
+/* LEFT BOTTOM YELLOW CHAIR IMAGE */
+.item4 {
+  grid-column: 1 / span 3;
+  grid-row: 5 / span 3;
+}
+
+/* CENTER SMALL TABLE + CAMERA */
+.item5 {
+  grid-column: 4 / span 3;
+  grid-row: 4 / span 3;
+}
+
+/* RIGHT MIDDLE DINING ROOM IMAGE */
+.item6 {
+  grid-column: 7 / span 3;
+  grid-row: 3 / span 4;
+}
+
+/* RIGHT LOWER FRAME & VASE */
+.item7 {
+  grid-column: 10 / span 3;
+  grid-row: 5 / span 2;
+}
+
+/* BOTTOM RIGHT SMALL IMAGE */
+.item8 {
+  grid-column: 10 / span 3;
+  grid-row: 7 / span 2;
+}
+
+/* ============================
+   RESPONSIVE
+============================ */
+@media (max-width: 900px) {
+  .share-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .item {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
+    height: 200px;
+  }
+}

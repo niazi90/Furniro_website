@@ -1,0 +1,29 @@
+.banner_text{
+    background-image: url('/shopimage1.png');
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.shoptext{
+      font-size: 44px;
+    width: 124px;
+    height: 72px;
+
+}.shop_text{
+  
+    width: 121px;
+    height: 24px;
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+}.home_text{
+  font-weight: bold;
+    width: 20px;
+    /* height: 24px; */
+}.greater{
+    margin-left: 30px;
+    margin-right: 5px;
+}

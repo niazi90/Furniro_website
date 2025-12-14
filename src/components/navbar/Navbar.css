@@ -1,0 +1,64 @@
+/* Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+ 
+  color:black;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  width: 40px;  /* Adjust to the size of your logo */
+  height: auto;
+  margin-right: 10px;
+}
+a{
+    color: black;
+}
+.logo-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #f0a500;  /* Hover color */
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icons .icon {
+  font-size: 24px;
+  margin-left: 20px;
+  cursor: pointer;
+  color: black;
+  transition: color 0.3s;
+}
+
+.icons .icon:hover {
+  color: #f0a500;  /* Hover color */
+}
