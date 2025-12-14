@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProductSection.css'; // Import the CSS file
+import './Productsection.css'; // Import the CSS file
 import img1 from '/image1.png';
 import img2 from '/image2.png';
 import img3 from '/image3.png';
