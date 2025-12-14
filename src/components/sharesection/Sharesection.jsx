@@ -1,5 +1,5 @@
 import React from "react";
-import "./ShareSection.css";
+import "./Sharesection.css";
 
 const ShareSection = () => {
   return (
