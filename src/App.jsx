@@ -5,7 +5,7 @@ import Home_page from "./pages/home/Home_page";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Shop_page from "./pages/shop/Shop_page";
-import About_page from "./pages/about/about_page";
+import About_page from "./pages/about/About_page";
 
 import ContactForm from "./pages/contact/ContactForm";
 
