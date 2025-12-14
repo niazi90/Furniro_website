@@ -1,5 +1,5 @@
 import React from 'react';
-import './CardSection.css'; // Import the CSS file
+import './Cardsection.css'; // Import the CSS file
 
 const CardSection = () => {
   return (
