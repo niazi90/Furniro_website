@@ -8,6 +8,8 @@ import Shop_page from "./pages/shop/Shop_page";
 import About_page from "./pages/about/About_page";
 
 import ContactForm from "./pages/contact/ContactForm";
+import Single_product from "./pages/single_product/Single_product";
+import Cart from "./pages/cart/Cart";
 
 // import About_page from "./pages/about_page/About_page";
 
@@ -20,6 +22,9 @@ function App() {
           <Route path="/shop" element={<Shop_page />} />
           <Route path="/about" element={<About_page/>} />
           <Route path="/contact" element={<ContactForm/>} />
+          {/* single product route  */}
+             <Route path="/single_product" element={<Single_product/>} />
+             <Route path="/cart" element={<Cart/>} />
           {/* <Route path="/cona" element={<about_page />} /> */}
         
         </Routes>

@@ -1,0 +1,97 @@
+.filter-wrapper {
+  width: 100%;
+  max-width: 1280px;
+  background: #F9F1E7;
+  border-radius: 8px;
+  padding: 16px 24px;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.filter-icon-box {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filter-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.filter-file-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.filter-divider {
+  width: 1px;
+  height: 24px;
+  background: #e2e8f0;
+}
+
+.filter-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-showing,
+.filter-total {
+  font-size: 14px;
+  color: #718096;
+}
+
+.filter-pagination {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  padding: 4px;
+}
+
+.filter-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-range {
+  padding: 0 10px;
+}
+
+.filter-right {
+  display: flex;
+  margin-right: 25px;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.filter-label {
+  font-size: 14px;
+}
+
+.filter-select {
+  border: 1px solid #e2e8f0;
+  padding: 6px 12px;
+  background-color:white;
+}
+
+.filter-value {
+  font-size: 14px;
+}

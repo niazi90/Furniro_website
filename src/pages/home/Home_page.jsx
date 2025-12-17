@@ -1,8 +1,7 @@
 import React from 'react'
-import Navbar from '../../components/navbar/Navbar'
+
 import Banner from '../../components/navbar/Banner'
 import CardSection from '../../components/cardsection/CardSection'
-import Footer from '../../components/footer/Footer'
 import ProductSection from '../../components/productsection/Productsection'
 import RoomInspiration from '../../components/roominsperation/RoomInspiration'
 import ShareSection from '../../components/sharesection/Sharesection'

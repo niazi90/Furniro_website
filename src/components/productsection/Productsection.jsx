@@ -8,6 +8,7 @@ import img5 from '/image5.png';
 import img6 from '/image6.png';
 import img7 from '/image7.png';
 import img8 from '/image8.png';
+import Cart from '../../pages/cart/Cart';
 
 const ProductSection = ({text}) => {
 
@@ -161,7 +162,8 @@ const ProductSection = ({text}) => {
             <span className="price">{feature.price}</span>
             <span className="discount">{feature.discount}</span> 
             <div className="hover-overlay">
-              <button className="add-to-cart">{feature.add_to_cart}</button>
+            <a href="/cart">
+              <button  className="add-to-cart">{feature.add_to_cart}</button></a>
               <div className="actions">
                 <span>{feature.share}</span>
                 <span>{feature.compare}</span>
