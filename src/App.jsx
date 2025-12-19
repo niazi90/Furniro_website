@@ -23,8 +23,10 @@ function App() {
           <Route path="/about" element={<About_page/>} />
           <Route path="/contact" element={<ContactForm/>} />
           {/* single product route  */}
-             <Route path="/single_product" element={<Single_product/>} />
+             <Route path="/single_product" element={<Single_product />} />
              <Route path="/cart" element={<Cart/>} />
+             <Route path="*" element={{}} />
+
           {/* <Route path="/cona" element={<about_page />} /> */}
         
         </Routes>
