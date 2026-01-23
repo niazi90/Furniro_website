@@ -9,6 +9,7 @@ import img6 from '/image6.png';
 import img7 from '/image7.png';
 import img8 from '/image8.png';
 import Cart from '../../pages/cart/Cart';
+import { Link } from 'react-router-dom';
 
 const ProductSection = ({text}) => {
 
@@ -162,8 +163,8 @@ const ProductSection = ({text}) => {
             <span className="price">{feature.price}</span>
             <span className="discount">{feature.discount}</span> 
             <div className="hover-overlay">
-            <a href="/cart">
-              <button  className="add-to-cart">{feature.add_to_cart}</button></a>
+            <Link to="/cart">
+              <button  className="add-to-cart">{feature.add_to_cart}</button></Link>
               <div className="actions">
                 <span>{feature.share}</span>
                 <span>{feature.compare}</span>

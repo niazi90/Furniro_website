@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
 import './Banner.css'; // Importing the CSS file
 
@@ -11,7 +12,7 @@ const Banner = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
           nec ullamcorper mattis.
         </p>
-        <button>BUY NOW</button>
+        <Link to='/single_product'> <button>BUY NOW </button></Link>
       </div>
     </div>
   );

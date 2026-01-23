@@ -6,10 +6,12 @@ import ProductSection from '../../components/productsection/Productsection'
 import RoomInspiration from '../../components/roominsperation/RoomInspiration'
 import ShareSection from '../../components/sharesection/Sharesection'
 
+
 const Home_page = () => {
   return (
     <div>
       {/* <Navbar /> */}
+     
       <Banner />
       <CardSection />
 {/* <ProductSection text={"Our Products"} discount_price={"-30%"} /> */}

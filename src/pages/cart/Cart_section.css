@@ -56,4 +56,26 @@
 .deleteicon{
     width: 10px;
     height: 20px;
+}.checkoutbtn{
+    background-color:#FAF3EA;
+     width: 200px;
+     height: 50px;
+     border-radius: 10px;
+     font-size: large;
+   
+}
+.checkoutbtn:hover{
+    background-color:#f39c12;
+   color: #FAF3EA;
+  
+    
+   
+}
+.checkoutparent{
+     display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+    
+    
 }

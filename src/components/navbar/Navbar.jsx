@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaUser, FaSearch, FaHeart, FaShoppingCart } from 'react-icons/fa'; // Importing React Icons
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -13,10 +14,15 @@ const Navbar = () => {
 
       {/* Center: Navigation Links */}
       <ul className="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/shop">Shop</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
+
+
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/shop">Shop</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
+       
+        
+        
       </ul>
 
       {/* Right: Icons using React Icons */}
