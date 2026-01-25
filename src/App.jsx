@@ -1,6 +1,7 @@
 import {  Routes, Route } from "react-router-dom";
 import "./App.css";
-
+import CartSidebar from "./components/cart_sidebar/ShoppingCartSidebar";
+import { useState } from "react";
 import Home_page from "./pages/home/Home_page";
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
@@ -17,12 +18,13 @@ import Checkout from "./pages/checkout/Checkout";
 // import About_page from "./pages/about_page/About_page";
 
 function App() {
+  const [isCartOpen, setIsCartOpen] = useState(false);
   
   return (
     <>
     
-     <Navbar />
-     
+     <Navbar setIsCartOpen={setIsCartOpen} />
+     <CartSidebar isOpen={isCartOpen} setIsOpen={setIsCartOpen} />
         <Routes>
           <Route path="/" element={<Home_page />} />
           <Route path="/shop" element={<Shop_page />} />

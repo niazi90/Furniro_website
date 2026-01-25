@@ -3,7 +3,7 @@ import { FaUser, FaSearch, FaHeart, FaShoppingCart } from 'react-icons/fa'; // I
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ setIsCartOpen }) => {
   return (
     <nav className="navbar">
       {/* Left: Logo with Image */}
@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className="user-icon"><FaUser className="icon" /></div>
         <div className="search-icon"><FaSearch className="icon" /></div>
         <div className="wishlist-icon"><FaHeart className="icon" /></div>
-        <div className="cart-icon"><FaShoppingCart className="icon" /></div>
+        <div className="cart-icon" onClick={()=>setIsCartOpen(true)}><FaShoppingCart className="icon" /></div>
       </div>
     </nav>
   );

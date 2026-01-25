@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { X, ShoppingCart } from 'lucide-react';
 import './ShoppingCartSidebar.css'
-export default function ShoppingCartSidebar() {
+export default function ShoppingCartSidebar({ isOpen, setIsOpen }) {
   const [cartItems, setCartItems] = useState([
     {
       id: 1,
@@ -36,45 +36,45 @@ export default function ShoppingCartSidebar() {
     <>
    
 
-      <div className="cart-container">
-        <div className="cart-sidebar">
+      <div className={`cart-container_sidebar ${isOpen ? "open" : ""}`}>
+        <div className="cart-sidebar_sidebar">
           {/* Header */}
-          <div className="cart-header">
-            <h2 className="cart-title">Shopping Cart</h2>
-            <button className="cart-icon">
-              <ShoppingCart size={24} />
-            </button>
+          <div className="cart-header_sidebar">
+            <h2 className="cart-title_sidebar">Shopping Cart</h2>
+           <button className="cart-icon_sidebar" onClick={() => setIsOpen(false)}>
+  <X size={24} />
+</button>
           </div>
 
           {/* Cart Items */}
-          <div className="cart-items">
+          <div className="cart-items_sidebar">
             {cartItems.map((item) => (
-              <div key={item.id} className="cart-item">
-                <div className="item-image-wrapper">
+              <div key={item.id} className="cart-item_sidebar">
+                <div className="item-image-wrapper_sidebar">
                   <img 
                     src={item.image} 
                     alt={item.name}
-                    className="item-image"
+                    className="item-image_sidebar"
                   />
                 </div>
                 
-                <div className="item-details">
-                  <div className="item-header">
-                    <h3 className="item-name">{item.name}</h3>
+                <div className="item-details_sidebar">
+                  <div className="item-header_sidebar">
+                    <h3 className="item-name_sidebar">{item.name}</h3>
                     <button
                       onClick={() => removeItem(item.id)}
-                      className="remove-btn"
+                      className="remove-btn_sidebar"
                     >
                       <X size={18} />
                     </button>
                   </div>
                   
-                  <div className="item-footer">
-                    <div className="item-quantity">
-                      <span className="quantity-text">{item.quantity}</span>
-                      <span className="quantity-separator">x</span>
+                  <div className="item-footer_sidebar">
+                    <div className="item-quantity_sidebar">
+                      <span className="quantity-text_sidebar">{item.quantity}</span>
+                      <span className="quantity-separator_sidebar">x</span>
                     </div>
-                    <span className="item-price">
+                    <span className="item-price_sidebar">
                       Rs. {item.price.toLocaleString('en-PK', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                     </span>
                   </div>
@@ -84,18 +84,18 @@ export default function ShoppingCartSidebar() {
           </div>
 
           {/* Footer */}
-          <div className="cart-footer">
-            <div className="subtotal-row">
-              <span className="subtotal-label">Subtotal</span>
-              <span className="subtotal-amount">
+          <div className="cart-footer_sidebar">
+            <div className="subtotal-row_sidebar">
+              <span className="subtotal-label_sidebar">Subtotal</span>
+              <span className="subtotal-amount_sidebar">
                 Rs. {subtotal.toLocaleString('en-PK', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
               </span>
             </div>
 
-            <div className="action-buttons">
-              <button className="action-btn">Cart</button>
-              <button className="action-btn">Checkout</button>
-              <button className="action-btn">Comparison</button>
+            <div className="action-buttons_sidebar">
+              <button className="action-btn_sidebar">Cart</button>
+              <button className="action-btn_sidebar">Checkout</button>
+              <button className="action-btn_sidebar">Comparison</button>
             </div>
           </div>
         </div>
