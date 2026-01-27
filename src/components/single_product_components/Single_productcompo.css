@@ -83,36 +83,6 @@
   height: 500px;
 }
 
-
-/* .sofaSeat {
-  position: absolute;
-  top: 25%;
-  width: 40%;
-  height: 75%;
-  background-color: #475569;
-  border-radius: 8px;
-  box-shadow: 0 10px 15px rgba(0,0,0,0.2);
-} */
-
-/* .sofaSeatLeft {
-  left: 0;
-}
-
-.sofaSeatRight {
-  right: 0;
-} */
-
-/* .sofaCushion {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 33.33%;
-  background-color: #334155;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-} */
-
 .centerTable {
   position: absolute;
   left: 50%;
@@ -294,11 +264,155 @@
   gap: 16px;
 }
 
-/* ✅ FIXED ERROR HERE */
+
 .socialButton {
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
   transition: transform 0.2s;
+}
+
+
+
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .mainImage {
+    height: auto;
+  }
+
+  .mainImageInner {
+    width: 100%;
+    height: auto;
+    padding: 24px;
+  }
+
+  .sofaBase {
+    width: 280px;
+    height: 420px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .prices {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .imageSection {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+
+  .thumbnailContainer {
+    flex-direction: row;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .thumbnail {
+    width: 64px;
+    height: 64px;
+  }
+
+  .mainImage {
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .mainImageInner {
+    padding: 16px;
+  }
+
+  .detailsSection {
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .prices {
+    font-size: 20px;
+  }
+
+  .ratingContainer {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .actionsContainer {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cartButton,
+  .compareButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .quantitySelector {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+@media (max-width: 480px) {
+  .thumbnail {
+    width: 56px;
+    height: 56px;
+  }
+
+  .sofaBase {
+    width: 220px;
+    height: 340px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .prices {
+    font-size: 18px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .optionsContainer {
+    flex-wrap: wrap;
+  }
+
+  .sizeButton {
+    width: 44px;
+    height: 44px;
+  }
+
+  .metaRow {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .metaLabel {
+    width: auto;
+    font-weight: 500;
+  }
+
+  .socialIcons {
+    gap: 12px;
+  }
 }

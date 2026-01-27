@@ -1,4 +1,4 @@
-/* Navbar.css */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,7 @@
 }
 
 .logo-image {
-  width: 40px;  /* Adjust to the size of your logo */
+  width: 40px;  
   height: auto;
   margin-right: 10px;
 }
@@ -43,7 +43,7 @@ a{
 }
 
 .nav-links a:hover {
-  color: #f0a500;  /* Hover color */
+  color: #f0a500;  
 }
 
 .icons {
@@ -60,20 +60,11 @@ a{
 }
 
 .icons .icon:hover {
-  color: #f0a500;  /* Hover color */
+  color: #f0a500;  
 }
 
 
 
-
-
-
-
-
-
-
-
-/* Navbar.css mein ye add karein */
 
 .cart-icon {
   position: relative;
@@ -94,4 +85,97 @@ a{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.menu-icon {
+  display: none;
+}
+
+
+
+
+@media (max-width: 1024px) {
+  .nav-links li {
+    margin: 0 12px;
+  }
+
+  .nav-links a {
+    font-size: 16px;
+  }
+
+  .icons .icon {
+    font-size: 22px;
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 15px;
+    position: relative;
+  }
+   .icons {
+    display: flex;
+    align-items: center;
+  }.user-icon,
+  .search-icon,
+  .wishlist-icon {
+    display: none;
+  }
+   .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .logo-text {
+    font-size: 20px;
+  }
+   .menu-icon {
+    display: block;
+  }
+
+  .nav-links {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    margin-top: 15px;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .icons {
+    margin-left: auto;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-image {
+    width: 32px;
+  }
+
+  .logo-text {
+    font-size: 18px;
+  }
+
+  .icons .icon {
+    font-size: 20px;
+    margin-left: 12px;
+  }
+
+  .cart-badge {
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+  }
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import "./Roominsperation.css";
-/* Import your 4 demo images from src/assets */
+
 
 
 const slidesData = [
@@ -52,7 +52,7 @@ export default function RoomInspiration() {
     setIndex((i) => (i + 1) % slidesData.length);
   };
 
-  // go to specific slide (by dot)
+
   const goTo = (i) => {
     setIndex(i);
   };
@@ -99,7 +99,7 @@ export default function RoomInspiration() {
           </button>
         </div>
 
-        {/* RIGHT SLIDER */}
+      
         <div
           className="right-section"
           onMouseEnter={handleMouseEnter}
@@ -116,7 +116,7 @@ export default function RoomInspiration() {
                 >
                   <img src={slide.image} alt={slide.title} className="slide-img" />
 
-                  {/* caption card inside image (bottom-left) */}
+                  
                   <div className="caption-card">
                     <div className="caption-top">
                       <span className="small">{slide.smallTitle}</span>
@@ -131,7 +131,7 @@ export default function RoomInspiration() {
             })}
           </div>
 
-          {/* left / right arrows */}
+        
           <button
             className="arrow arrow-left"
             onClick={prevSlide}
@@ -147,7 +147,7 @@ export default function RoomInspiration() {
             ›
           </button>
 
-          {/* dots */}
+
           <div className="dots">
             {slidesData.map((_, i) => (
               <button

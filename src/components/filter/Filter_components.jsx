@@ -1,6 +1,6 @@
 import React from 'react';
 import './Filter_components.css';
-// import filter from '/filter.svg';
+
 
 const Filter_component = ({ filter_svg, filter_text, filter_heading, menu_svg,
      menu_text, destop_svg, text, destop_text, Showing_text ,page_first_number,page_last_number,righttext,rightnumber,short_by,default_text}) => {
@@ -27,17 +27,11 @@ const Filter_component = ({ filter_svg, filter_text, filter_heading, menu_svg,
                     <div className="filter-info">
                         <span className="filter-showing">{Showing_text}</span>
 
-                        {/* <div className="filter-pagination"> */}
-                            {/* <button className="filter-arrow prev">
-                                <img src={aero_svg} alt={aero_svg_text} />
-                            </button> */}
+                     
 
                             <span className="filter-range">{ page_first_number}</span>
 
-                            {/* <button className="filter-arrow next">
-                                 <img src={aero_next_svg} alt={aero_next_svg_text} />
-                            </button> */}
-                        {/* </div> */}
+                           
 
                         <span className="filter-total">{page_last_number}</span>
                     </div>

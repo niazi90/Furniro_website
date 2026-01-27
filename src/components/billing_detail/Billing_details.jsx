@@ -35,7 +35,7 @@ export default function BillingDetailsForm() {
 
       <div className="billing-container_details">
         <div className="billing-wrapper_details">
-          {/* Left Side - Billing Form */}
+          
           <div className="billing-form_details">
             <h2 className="form-title_details">Billing details</h2>
 
@@ -170,7 +170,6 @@ export default function BillingDetailsForm() {
             </div>
           </div>
 
-          {/* Right Side - Product Summary */}
           <div className="product-section_details">
             <div className="product-header_details">Product</div>
             <div className="product-item_details">

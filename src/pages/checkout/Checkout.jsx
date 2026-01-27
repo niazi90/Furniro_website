@@ -1,6 +1,5 @@
 import React from 'react'
-import Navbar from '../../components/navbar/Navbar'
-import Banner from '../../components/navbar/Banner'
+
 import Banner_components from '../../components/banner_components/Banner_components'
 import Acheivemnt from '../../components/achivement/Achivement'
 

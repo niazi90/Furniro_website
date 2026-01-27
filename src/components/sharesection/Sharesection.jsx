@@ -21,20 +21,7 @@ const ShareSection = () => {
     <div class="div8">  <img src="/8.png"  alt="" /></div>
     <div class="div9"> <img src="/7.png"  alt="" /></div>
 </div>
-      {/* <div className="share-grid">
-
-        <img src="/1.png" className="item item1" alt="" />
-        <img src="/2.png" className="item item2" alt="" />
-        <img src="/4.png" className="item item3" alt="" />
-
-        <img src="/5.png" className="item item4" alt="" />
-        <img src="/6.png" className="item item5" alt="" />
-        <img src="/7.png" className="item item6" alt="" />
-
-        <img src="/8.png" className="item item7" alt="" />
-        <img src="/7.png" className="item item8" alt="" />
-      </div> */}
-    </section>
+         </section>
   );
 };
 

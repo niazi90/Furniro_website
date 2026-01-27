@@ -2,8 +2,8 @@ import React from 'react';
 import './Cart_section.css';
 import img3 from '/image3.png';
 import deleteicon from '/delete.svg'
-import Home_page from '../home/Home_page';
-import Single_product from '../single_product/Single_product';
+
+
 import { Link } from 'react-router-dom';
 
 const Cart_section = () => {

@@ -17,14 +17,6 @@ const Shop_page = () => {
    Showing_text={"showing"} page_first_number={"1-16"} page_last_number={"of 32 results"}
    righttext={"show"} rightnumber={"16"} short_by={"sorted by"} default_text={"Default"}
 
-
-
-
-   
-   
-   
-   
-   
    />
     <ProductSection  />
     <Acheivemnt />

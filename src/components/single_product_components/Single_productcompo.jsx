@@ -32,7 +32,7 @@ const Single_productcompo = () => {
       <div className="wrapper">
         <div className="grid">
 
-          {/* LEFT SIDE */}
+          
           <div className="imageSection">
             <div className="thumbnailContainer">
               {thumbnails.map((img,i) => (
@@ -59,7 +59,7 @@ const Single_productcompo = () => {
             </div>
           </div>
 
-          {/* RIGHT SIDE */}
+         
           <div className="detailsSection">
             <div>
               <h1 className="title">Asgaard sofa</h1>
@@ -82,7 +82,7 @@ const Single_productcompo = () => {
               Setting the bar as one of the loudest speakers in its class...
             </p>
 
-            {/* SIZE */}
+           
             <div>
               <p className="label">Size</p>
               <div className="optionsContainer">
@@ -98,7 +98,7 @@ const Single_productcompo = () => {
               </div>
             </div>
 
-            {/* COLOR */}
+           
             <div>
               <p className="label">Color</p>
               <div className="optionsContainer">
@@ -113,7 +113,6 @@ const Single_productcompo = () => {
               </div>
             </div>
 
-            {/* ACTIONS */}
             <div className="actionsContainer">
               <div className="quantitySelector">
                 <button onClick={() => setQuantity(q => Math.max(1, q - 1))} className="quantityButton">-</button>
@@ -125,7 +124,7 @@ const Single_productcompo = () => {
               <button className="compareButton">+ Compare</button>
             </div>
 
-            {/* META */}
+           
             <div className="metaSection">
               <div className="metaRow">
                 <span className="metaLabel">SKU</span>
@@ -152,8 +151,6 @@ const Single_productcompo = () => {
                   <button className="socialButton"><img src={twitter} alt="twitter" /></button>
                 
               
-                  {/* <button className="socialButton"><Linkedin size={20} /></button>
-                  <button className="socialButton"><Twitter size={20} /></button> */}
                 </div>
               </div>
             </div>

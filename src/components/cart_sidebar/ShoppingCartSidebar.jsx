@@ -46,7 +46,7 @@ export default function ShoppingCartSidebar({ isOpen, setIsOpen }) {
 </button>
           </div>
 
-          {/* Cart Items */}
+          
           <div className="cart-items_sidebar">
             {cartItems.map((item) => (
               <div key={item.id} className="cart-item_sidebar">
@@ -83,7 +83,7 @@ export default function ShoppingCartSidebar({ isOpen, setIsOpen }) {
             ))}
           </div>
 
-          {/* Footer */}
+          
           <div className="cart-footer_sidebar">
             <div className="subtotal-row_sidebar">
               <span className="subtotal-label_sidebar">Subtotal</span>

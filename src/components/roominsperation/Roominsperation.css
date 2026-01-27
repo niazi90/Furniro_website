@@ -1,4 +1,4 @@
-/* Wrapper */
+
 .inspiration-wrapper {
   width: 100%;
   min-height: 70vh;
@@ -10,7 +10,7 @@
   box-sizing: border-box;
 }
 
-/* Content grid */
+
 .inspiration-content {
   max-width: 1200px;
   width: 100%;
@@ -22,7 +22,7 @@
   position: relative;
 }
 
-/* Left section */
+
 .left-section h1 {
   font-size: 46px;
   line-height: 1.05;
@@ -53,7 +53,7 @@
   background: #a77722;
 }
 
-/* RIGHT SECTION / SLIDER */
+
 .right-section {
   position: relative;
   width: 100%; 
@@ -63,17 +63,15 @@
   justify-content: center;
 }
 
-/* viewport container (holds slides) */
+
 .slider-viewport {
   position: relative;
   width: 100%;
   height: 100%;
   overflow: hidden;
   border-radius: 14px;
-  /* box-shadow: 0 10px 26px rgba(18, 18, 18, 0.08); */
+  
 }
-
-/* each slide absolute positioned and transition */
 .slide {
   position: absolute;
   inset: 0;
@@ -85,14 +83,12 @@
   justify-content: center;
 }
 
-/* active slide */
 .slide.active {
   opacity: 1;
   transform: translateX(0) scale(1);
   z-index: 2;
 }
 
-/* image style */
 .slide-img {
   width: 80%;
   height: 100%;
@@ -101,7 +97,6 @@
   border-radius: 14px;
 }
 
-/* caption card inside image bottom-left */
 .caption-card {
   position: absolute;
   left: 24px;
@@ -136,7 +131,6 @@
   font-weight: 700;
 }
 
-/* arrows (white round) */
 .arrow {
   position: absolute;
   top: 50%;
@@ -161,7 +155,7 @@
   transform: translateY(-50%) scale(1.03);
 }
 
-/* dots under the slider (centered) */
+
 .dots {
   position: absolute;
   bottom: 18px;
@@ -187,7 +181,6 @@
   height: 12px;
 }
 
-/* Responsive adjustments */
 @media (max-width: 980px) {
   .inspiration-content {
     grid-template-columns: 1fr;
@@ -211,4 +204,103 @@
   }
   .caption-title { font-size: 18px; }
   .arrow { width: 44px; height: 44px; font-size: 20px; }
+}
+
+
+
+
+
+@media (max-width: 1200px) {
+  .left-section h1 {
+    font-size: 40px;
+  }
+
+  .lead {
+    font-size: 15.5px;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .inspiration-wrapper {
+    padding: 40px 20px;
+  }
+
+  .right-section {
+    height: 380px;
+  }
+
+  .slide-img {
+    width: 90%;
+  }
+
+  .caption-title {
+    font-size: 20px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .inspiration-content {
+    text-align: center;
+  }
+
+  .left-section h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .lead {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .explore-btn {
+    padding: 12px 26px;
+  }
+
+  .right-section {
+    height: 300px;
+  }
+
+  .slide-img {
+    width: 100%;
+  }
+
+
+  .arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .inspiration-wrapper {
+    padding: 30px 14px;
+  }
+
+  .left-section h1 {
+    font-size: 24px;
+  }
+
+  .lead {
+    font-size: 14px;
+  }
+
+  .right-section {
+    height: 260px;
+  }
+
+  .caption-card {
+    padding: 10px 12px;
+  }
+
+  .caption-title {
+    font-size: 16px;
+  }
+
+  .dots {
+    bottom: 10px;
+    gap: 8px;
+  }
 }

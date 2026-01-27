@@ -1,36 +1,36 @@
-import React from 'react';
-import { FaUser, FaSearch, FaHeart, FaShoppingCart } from 'react-icons/fa'; // Importing React Icons
+import React, { useState } from 'react';
+import { FaUser, FaSearch, FaHeart, FaShoppingCart, FaBars } from 'react-icons/fa';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 
 const Navbar = ({ setIsCartOpen }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
-      {/* Left: Logo with Image */}
       <div className="logo">
-        <img src="/logo.png" alt="Furniro Logo" className="logo-image" /> {/* Add your logo image path */}
+        <img src="/logo.png" alt="Furniro Logo" className="logo-image" />
         <span className="logo-text">Furniro</span>
       </div>
 
-      {/* Center: Navigation Links */}
-      <ul className="nav-links">
-
-
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/shop">Shop</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-       
-        
-        
+      <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+        <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
+        <li><Link to="/shop" onClick={() => setMenuOpen(false)}>Shop</Link></li>
+        <li><Link to="/about" onClick={() => setMenuOpen(false)}>About</Link></li>
+        <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
       </ul>
 
-      {/* Right: Icons using React Icons */}
       <div className="icons">
-        <div className="user-icon"><FaUser className="icon" /></div>
-        <div className="search-icon"><FaSearch className="icon" /></div>
-        <div className="wishlist-icon"><FaHeart className="icon" /></div>
-        <div className="cart-icon" onClick={()=>setIsCartOpen(true)}><FaShoppingCart className="icon" /></div>
+        <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+          <FaBars className="icon" />
+        </div>
+
+        <FaUser className="icon" />
+        <FaSearch className="icon" />
+        <FaHeart className="icon" />
+        <div className="cart-icon" onClick={() => setIsCartOpen(true)}>
+          <FaShoppingCart className="icon" />
+        </div>
       </div>
     </nav>
   );

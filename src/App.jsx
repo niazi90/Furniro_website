@@ -15,7 +15,7 @@ import Checkout from "./pages/checkout/Checkout";
 
 
 
-// import About_page from "./pages/about_page/About_page";
+
 
 function App() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -36,7 +36,7 @@ function App() {
              <Route path="/cart" element={<Cart/>} />
              <Route path="*" element={{}} />
 
-          {/* <Route path="/cona" element={<about_page />} /> */}
+          
         
         </Routes>
       <Footer />

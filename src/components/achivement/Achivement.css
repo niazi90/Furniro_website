@@ -1,9 +1,9 @@
 /* FeaturesLayout.css */
 .features-layout-container {
   font-family: 'Arial', sans-serif;
-  background-color:#FAF3EA;
+  background-color: #FAF3EA;
   padding: 40px 20px;
-  max-width: 1300px;
+  max-width: 1390px;
   margin: 0 auto;
 }
 
@@ -62,27 +62,83 @@
   line-height: 1.4;
 }
 
-/* Responsive Design */
+
 @media (max-width: 992px) {
   .features-layout-wrapper {
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
   }
-  
+
   .feature-layout-item {
     padding: 15px 10px;
+  }
+
+  .feature-layout-title {
+    font-size: 1rem;
+  }
+
+  .feature-layout-desc {
+    font-size: 0.85rem;
+  }
+
+  .feature-layout-icon {
+    width: 45px;
+    height: 45px;
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-layout-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .feature-layout-item {
+           padding: 12px 10px;
+        max-width: 28%;
+        margin: 16px auto;
+  }
+
+  .feature-layout-title {
+    font-size: 0.95rem;
+  }
+
+  .feature-layout-desc {
+    font-size: 0.8rem;
+  }
+
+  .feature-layout-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+    margin-right: 25px;
   }
 }
 
 @media (max-width: 576px) {
   .features-layout-wrapper {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
   }
-  
+
   .feature-layout-item {
-    padding: 15px;
-    max-width: 300px;
-    margin: 0 auto;
+    padding: 10px 18px 10px 3px;
+    max-width: 40%;
+  }
+
+  .feature-layout-title {
+    font-size: 0.9rem;
+  }
+
+  .feature-layout-desc {
+    font-size: 0.75rem;
+  }
+
+  .feature-layout-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.8rem;
+    margin-right: 20px ;
   }
 }
