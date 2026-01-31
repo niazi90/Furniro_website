@@ -31,6 +31,7 @@ const Navbar = ({ setIsCartOpen }) => {
         <div className="cart-icon" onClick={() => setIsCartOpen(true)}>
           <FaShoppingCart className="icon" />
         </div>
+        
       </div>
     </nav>
   );

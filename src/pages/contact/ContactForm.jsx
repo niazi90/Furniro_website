@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './contactForm.css';
 import { FaLocationDot } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
@@ -7,7 +7,60 @@ import Banner_components from '../../components/banner_components/Banner_compone
 import Acheivemnt from '../../components/achivement/Achivement';
 
 const ContactForm = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+    });
 
+    const [loading, setLoading] = useState(false);
+    const [responseMessage, setResponseMessage] = useState('');
+    const [error, setError] = useState('');
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        setError('');
+        setResponseMessage('');
+
+        try {
+            const response = await fetch('http://localhost:5000/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setResponseMessage(data.message || 'Message sent successfully!');
+                // Clear form after successful submission
+                setFormData({
+                    name: '',
+                    email: '',
+                    subject: '',
+                    message: ''
+                });
+            } else {
+                setError(data.error || 'Failed to send message. Please try again.');
+            }
+        } catch (err) {
+            setError('Network error. Please check your connection and try again.');
+            console.error('Error submitting form:', err);
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <>
@@ -52,7 +105,33 @@ const ContactForm = () => {
                         </div>
 
                         <div className="contact-form-container">
-                            <form className="contact-form">
+                            <form className="contact-form" onSubmit={handleSubmit}>
+                                {responseMessage && (
+                                    <div style={{ 
+                                        padding: '16px', 
+                                        backgroundColor: '#d4edda', 
+                                        color: '#155724', 
+                                        borderRadius: '8px',
+                                        marginBottom: '20px',
+                                        border: '1px solid #c3e6cb'
+                                    }}>
+                                        {responseMessage}
+                                    </div>
+                                )}
+
+                                {error && (
+                                    <div style={{ 
+                                        padding: '16px', 
+                                        backgroundColor: '#f8d7da', 
+                                        color: '#721c24', 
+                                        borderRadius: '8px',
+                                        marginBottom: '20px',
+                                        border: '1px solid #f5c6cb'
+                                    }}>
+                                        {error}
+                                    </div>
+                                )}
+
                                 <div className="form-group">
                                     <label htmlFor="name">Your name</label>
                                     <input
@@ -60,6 +139,9 @@ const ContactForm = () => {
                                         id="name"
                                         name="name"
                                         placeholder="Abc"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
                                     />
                                 </div>
 
@@ -70,6 +152,9 @@ const ContactForm = () => {
                                         id="email"
                                         name="email"
                                         placeholder="Abc@def.com"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
                                     />
                                 </div>
 
@@ -80,6 +165,8 @@ const ContactForm = () => {
                                         id="subject"
                                         name="subject"
                                         placeholder="Optional subject"
+                                        value={formData.subject}
+                                        onChange={handleChange}
                                     />
                                 </div>
 
@@ -90,11 +177,14 @@ const ContactForm = () => {
                                         name="message"
                                         placeholder="Hi! I'd like to ask about"
                                         rows="5"
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        required
                                     ></textarea>
                                 </div>
 
-                                <button type="submit" className="submit-btn">
-                                    Submit
+                                <button type="submit" className="submit-btn" disabled={loading}>
+                                    {loading ? 'Sending...' : 'Submit'}
                                 </button>
                             </form>
                         </div>
