@@ -1,4 +1,3 @@
-
 .sdcontainer {
   width: 100%;
   max-width: 1300px;
@@ -7,14 +6,13 @@
   background-color: #ffffff;
 }
 
-
 .sdtabContainer {
   display: flex;
   justify-content: center;
   gap: 60px;
   margin-bottom: 40px;
   border-bottom: 1px solid #e5e7eb;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 .sdtab {
@@ -37,7 +35,6 @@
   color: #9ca3af;
 }
 
-
 .sdcontentContainer {
   padding: 40px 0;
 }
@@ -55,7 +52,6 @@
   text-align: justify;
 }
 
-
 .sdimagesGrid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -63,6 +59,7 @@
   margin-top: 50px;
 }
 
+/* ← yeh 3 change kiye */
 .sdimageCard {
   background-color: #f9f1e7;
   border-radius: 12px;
@@ -70,52 +67,33 @@
   aspect-ratio: 16 / 10;
 }
 
-.sdimagePlaceholder {
+.sdimageCard .sdsofaSection,
+.sdimageCard .sdsofaImage .sdsofaSection {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px;
 }
 
-.sdsofaImages {
+.sdimageCard img {
   width: 100%;
   height: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;  /* ← yeh hai main fix — image card mein fit hoti hai */
+}
+
+/* ← yeh hataye the purane styles jo conflict kar rahe the */
+.sdsofaImage {
+  width: 100%;
+  height: 100%;
 }
 
 .sdsofaSection {
-  flex: 1;
-  height: 90%;
-  background-color: #e8e5dd;
-  border-radius: 8px 8px 0 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
 }
 
-.sdchaiseSection {
-  flex: 1.2;
-  height: 75%;
-  background-color: #e8e5dd;
-  border-radius: 8px 0 0 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  align-self: flex-end;
-}
-
-.sdsofaBase {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 12px;
-  background-color: #8b7355;
-  border-radius: 0 0 4px 4px;
-}
-
-
+/* ===== RESPONSIVE ===== */
 @media (max-width: 1024px) {
   .sdtabContainer {
     gap: 30px;
@@ -128,10 +106,6 @@
 
   .sdparagraph {
     font-size: 15px;
-  }
-
-  .sdsofaSection, .sdchaiseSection {
-    height: 70%;
   }
 }
 
@@ -149,19 +123,8 @@
     font-size: 14px;
   }
 
-  .sdsofaSection {
-    flex: 1;
-    height: 60%;
-  }
-
-  .sdchaiseSection {
-    flex: 1;
-    height: 55%;
-  }
-
   .sdimageCard {
-    aspect-ratio: auto;
-    padding-top: 40%; 
+    aspect-ratio: 16 / 10;
   }
 }
 
@@ -182,16 +145,7 @@
     margin-bottom: 20px;
   }
 
-  .sdsofaSection {
-    height: 50%;
-  }
-
-  .sdchaiseSection {
-    height: 45%;
-  }
-
   .sdimageCard {
-    aspect-ratio: auto;
-    padding-top: 50%;
+    aspect-ratio: 4 / 3;
   }
 }

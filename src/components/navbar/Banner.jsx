@@ -12,7 +12,7 @@ const Banner = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus
           nec ullamcorper mattis.
         </p>
-        <Link to='/single_product'> <button>BUY NOW </button></Link>
+        <Link to='/shop'> <button>BUY NOW </button></Link>
       </div>
     </div>
   );
