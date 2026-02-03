@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Cart_section.css';
 import deleteicon from '/delete.svg';
 import { cartAPI } from '../../services/api';
-// import { getImageUrl } from '../../utils/imageUrl';
+import { getImageUrl } from '../../utils/imageUrl';
 
 const Cart_section = () => {
   const [cart, setCart] = useState({ items: [], subtotal: 0 });

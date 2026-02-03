@@ -6,7 +6,7 @@ import twitter from '/twitter.svg';
 import { Star, StarHalf } from 'lucide-react';
 import './Single_productcompo.css';
 import { productsAPI, cartAPI } from '../../services/api';
-// import { getImageUrl } from '../../utils/imageUrl';
+import { getImageUrl } from '../../utils/imageUrl';
 
 const Single_productcompo = ({ productId }) => {
   const navigate = useNavigate();
