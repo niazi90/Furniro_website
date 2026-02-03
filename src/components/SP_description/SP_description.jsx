@@ -3,7 +3,7 @@ import "./SP_description.css";
 import threesofa from '/Cloudthree.png';
 import threesofas from '/Cloudthrees.png';
 import { productsAPI } from '../../services/api';
-import { getImageUrl } from '../../utils/imageUrl';
+// import { getImageUrl } from '../../utils/imageUrl';
 
 const SP_description = ({ productId }) => {
     const [activeTab, setActiveTab] = useState("sddescription");
