@@ -133,9 +133,9 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
             style={{ cursor: 'pointer' }}
           >
             {/* Discount */}
-            {product.discount_text && (
+            {product.discountPercentage && (
               <div className="discount-price">
-                <p className="discount-text">{product.discount_text}</p>
+                <p className="discount-text">{product.discountPercentage}%</p>
               </div>
             )}
 
