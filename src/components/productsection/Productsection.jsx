@@ -3,7 +3,8 @@ import { productsAPI, cartAPI } from '../../services/api';
 import './Productsection.css';
 import { useNavigate } from 'react-router-dom';
 
-const BACKEND_URL = 'https://ferniobackend-production.up.railway.app'; // ✅ Railway backend URL
+// ✅ Use the backend URL from environment variable for Vercel and local
+const BACKEND_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
 
 const ProductSection = ({ text, filters, onPaginationChange }) => {
   const [products, setProducts] = useState([]);
@@ -43,10 +44,11 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
 
       const response = await productsAPI.getAll(params);
 
+      // ✅ Update images to use BACKEND_URL dynamically
       const productsWithFullImage = response.data.data.map(product => ({
         ...product,
         image: product.image
-          ? `${BACKEND_URL}/uploads/${product.image}` // ✅ Updated to Railway backend
+          ? `${BACKEND_URL}/uploads/${product.image}`
           : '/placeholder.png'
       }));
 
