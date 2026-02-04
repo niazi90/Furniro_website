@@ -83,7 +83,8 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
   };
 
   const handleProductClick = (productId) => {
-    navigate(`/api/product/${productId}`);
+    // ✅ FIXED: Removed /api/ from route - this was the main bug
+    navigate(`/product/${productId}`);
   };
 
   const handlePageChange = (page) => {
