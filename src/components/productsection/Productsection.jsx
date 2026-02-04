@@ -44,6 +44,13 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
 
       const response = await productsAPI.getAll(params);
 
+      // ✅ FIX: Check if data exists before mapping
+      if (!response.data || !response.data.data) {
+        console.error('Invalid API response structure:', response.data);
+        setProducts([]);
+        return;
+      }
+
       // ✅ Update images to use BACKEND_URL dynamically
       const productsWithFullImage = response.data.data.map(product => ({
         ...product,
@@ -53,18 +60,20 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
       }));
 
       setProducts(productsWithFullImage);
-      setTotalProducts(response.data.pagination.total);
-      setTotalPages(response.data.pagination.pages);
+      setTotalProducts(response.data.pagination?.total || productsWithFullImage.length);
+      setTotalPages(response.data.pagination?.pages || 1);
 
       if (onPaginationChange) {
         onPaginationChange({
           currentPage: page,
-          totalProducts: response.data.pagination.total,
+          totalProducts: response.data.pagination?.total || productsWithFullImage.length,
           productsPerPage: productsPerPage
         });
       }
     } catch (error) {
       console.error('Error fetching products:', error);
+      console.error('Error details:', error.response?.data);
+      setProducts([]); // ✅ Set empty array on error
     } finally {
       setLoading(false);
     }
@@ -117,7 +126,16 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
     return pages;
   };
 
-  if (loading) return <div>Loading products...</div>;
+  // ✅ FIX: Show message if loading or no products
+  if (loading) return <div style={{ textAlign: 'center', padding: '40px' }}>Loading products...</div>;
+  
+  if (products.length === 0) {
+    return (
+      <div style={{ textAlign: 'center', padding: '40px' }}>
+        <p>No products available</p>
+      </div>
+    );
+  }
 
   return (
     <div className="product-section">
@@ -142,11 +160,15 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
               </div>
             )}
 
-            <img src={product.image} alt={product.title} />
+            <img 
+              src={product.image} 
+              alt={product.title}
+              onError={(e) => e.target.src = '/placeholder.png'} 
+            />
             <div className="product-info">
               <h3>{product.title}</h3>
               <p>{product.subtitle}</p>
-              <span className="price">Rs. {product.price.toLocaleString()}</span>
+              <span className="price">Rs. {product.price?.toLocaleString() || '0'}</span>
               {product.discount > 0 && (
                 <span className="discount">Rs. {product.discount.toLocaleString()}</span>
               )}

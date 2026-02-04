@@ -16,6 +16,7 @@ const ContactForm = () => {
   });
   
   const [submitting, setSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: '', message: '' });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -30,25 +31,69 @@ const ContactForm = () => {
     
     // Validation
     if (!formData.name || !formData.email || !formData.message) {
-      alert('Please fill in all required fields');
+      setSubmitStatus({
+        type: 'error',
+        message: 'Please fill in all required fields'
+      });
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Please enter a valid email address'
+      });
       return;
     }
 
     try {
       setSubmitting(true);
-      await contactAPI.submit(formData);
-      alert('Thank you for contacting us! We will get back to you soon.');
+      setSubmitStatus({ type: '', message: '' });
       
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
+      console.log('📧 Submitting contact form:', formData);
+      
+      const response = await contactAPI.submit(formData);
+      
+      console.log('✅ Contact form response:', response.data);
+      
+      setSubmitStatus({
+        type: 'success',
+        message: 'Thank you for contacting us! We will get back to you soon.'
       });
+      
+      // Reset form after successful submission
+      setTimeout(() => {
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        setSubmitStatus({ type: '', message: '' });
+      }, 3000);
+      
     } catch (error) {
-      console.error('Error submitting contact form:', error);
-      alert('Failed to submit form. Please try again.');
+      console.error('❌ Error submitting contact form:', error);
+      console.error('Error details:', {
+        message: error.message,
+        response: error.response?.data,
+        status: error.response?.status
+      });
+      
+      let errorMessage = 'Failed to submit form. Please try again.';
+      
+      if (error.response?.status === 405) {
+        errorMessage = 'Service temporarily unavailable. Please try again later or contact us directly.';
+      } else if (error.response?.data?.message) {
+        errorMessage = error.response.data.message;
+      }
+      
+      setSubmitStatus({
+        type: 'error',
+        message: errorMessage
+      });
     } finally {
       setSubmitting(false);
     }
@@ -95,8 +140,23 @@ const ContactForm = () => {
 
             <div className="contact-form-container">
               <form className="contact-form" onSubmit={handleSubmit}>
+                
+                {/* Status Message */}
+                {submitStatus.message && (
+                  <div style={{
+                    padding: '12px',
+                    marginBottom: '20px',
+                    borderRadius: '5px',
+                    backgroundColor: submitStatus.type === 'success' ? '#d4edda' : '#f8d7da',
+                    color: submitStatus.type === 'success' ? '#155724' : '#721c24',
+                    border: `1px solid ${submitStatus.type === 'success' ? '#c3e6cb' : '#f5c6cb'}`
+                  }}>
+                    {submitStatus.message}
+                  </div>
+                )}
+
                 <div className="form-group">
-                  <label htmlFor="name">Your name</label>
+                  <label htmlFor="name">Your name *</label>
                   <input
                     type="text"
                     id="name"
@@ -105,11 +165,12 @@ const ContactForm = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    disabled={submitting}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email">Email address</label>
+                  <label htmlFor="email">Email address *</label>
                   <input
                     type="email"
                     id="email"
@@ -118,12 +179,13 @@ const ContactForm = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    disabled={submitting}
                   />
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="subject">
-                    Subject <span className="optional">(This is an optional)</span>
+                    Subject <span className="optional">(Optional)</span>
                   </label>
                   <input
                     type="text"
@@ -132,11 +194,12 @@ const ContactForm = () => {
                     placeholder="Optional subject"
                     value={formData.subject}
                     onChange={handleChange}
+                    disabled={submitting}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="message">Message</label>
+                  <label htmlFor="message">Message *</label>
                   <textarea
                     id="message"
                     name="message"
@@ -145,6 +208,7 @@ const ContactForm = () => {
                     value={formData.message}
                     onChange={handleChange}
                     required
+                    disabled={submitting}
                   ></textarea>
                 </div>
 
@@ -152,6 +216,10 @@ const ContactForm = () => {
                   type="submit" 
                   className="submit-btn"
                   disabled={submitting}
+                  style={{
+                    opacity: submitting ? 0.6 : 1,
+                    cursor: submitting ? 'not-allowed' : 'pointer'
+                  }}
                 >
                   {submitting ? 'Submitting...' : 'Submit'}
                 </button>

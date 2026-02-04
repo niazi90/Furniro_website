@@ -1,6 +1,8 @@
 import axios from 'axios';
 
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+
+console.log('🔧 API Base URL:', API_BASE_URL); // Debug log
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -8,6 +10,15 @@ const api = axios.create({
     'Content-Type': 'application/json'
   }
 });
+
+// Add response interceptor for better error handling
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    console.error('API Error:', error.response?.data || error.message);
+    return Promise.reject(error);
+  }
+);
 
 // Generate or get session ID
 export const getSessionId = () => {
@@ -45,13 +56,13 @@ export const cartAPI = {
 // Orders API
 export const ordersAPI = {
   create: (billingDetails, paymentMethod) => 
-    api.post('/orders', { sessionId: getSessionId(), billingDetails, paymentMethod }),
+    api.post('/api/orders', { sessionId: getSessionId(), billingDetails, paymentMethod }),
   getAll: (filters = {}) => api.get('/api/orders', { params: filters }),
   getById: (id) => api.get(`/api/orders/${id}`),
   getByNumber: (orderNumber) => api.get(`/api/orders/number/${orderNumber}`)
 };
 
-// Contact API - NEW
+// Contact API
 export const contactAPI = {
   submit: (data) => api.post('/api/contact', data),
   getAll: () => api.get('/api/contact'),
