@@ -3,6 +3,8 @@ import { productsAPI, cartAPI } from '../../services/api';
 import './Productsection.css';
 import { useNavigate } from 'react-router-dom';
 
+const BACKEND_URL = 'https://ferniobackend-production.up.railway.app'; // ✅ Railway backend URL
+
 const ProductSection = ({ text, filters, onPaginationChange }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -44,7 +46,7 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
       const productsWithFullImage = response.data.data.map(product => ({
         ...product,
         image: product.image
-          ? `http://localhost:5000/uploads/${product.image}`
+          ? `${BACKEND_URL}/uploads/${product.image}` // ✅ Updated to Railway backend
           : '/placeholder.png'
       }));
 
@@ -79,7 +81,7 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
   };
 
   const handleProductClick = (productId) => {
-    navigate(`/product/${productId}`);
+    navigate(`/api/product/${productId}`);
   };
 
   const handlePageChange = (page) => {
@@ -123,7 +125,6 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
             className={`product-card ${activeCard === product._id ? "active" : ""}`}
             key={product._id}
             onClick={() => {
-              // Only toggle on mobile (width <= 768px)
               if (window.innerWidth <= 768) {
                 setActiveCard(activeCard === product._id ? null : product._id);
               } else {
@@ -132,7 +133,6 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
             }}
             style={{ cursor: 'pointer' }}
           >
-            {/* Discount */}
             {product.discountPercentage && (
               <div className="discount-price">
                 <p className="discount-text">{product.discountPercentage}%</p>
@@ -166,7 +166,6 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
         ))}
       </div>
 
-      {/* Pagination */}
       {totalPages > 1 && (
         <div className="pagination-wrapper">
           <div className="pagination-controls">
