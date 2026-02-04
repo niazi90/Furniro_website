@@ -21,42 +21,42 @@ export const getSessionId = () => {
 
 // Products API
 export const productsAPI = {
-  getAll: (filters = {}) => api.get('/products', { params: filters }),
-  getById: (id) => api.get(`/products/${id}`),
-  getFeatured: () => api.get('/products/featured'),
-  getByCategory: (category) => api.get(`/products/category/${category}`)
+  getAll: (filters = {}) => api.get('/api/products', { params: filters }),
+  getById: (id) => api.get(`/api/products/${id}`),
+  getFeatured: () => api.get('/api/products/featured'),
+  getByCategory: (category) => api.get(`/api/products/category/${category}`)
 };
 
 // Cart API
 export const cartAPI = {
-  get: () => api.get(`/cart/${getSessionId()}`),
+  get: () => api.get(`/api/cart/${getSessionId()}`),
   addItem: (productId, quantity = 1, size = 'L', color = 'blue') => 
-    api.post(`/cart/${getSessionId()}/items`, { productId, quantity, size, color }),
+    api.post(`/api/cart/${getSessionId()}/items`, { productId, quantity, size, color }),
   updateItem: (itemId, quantity) => 
-    api.put(`/cart/${getSessionId()}/items/${itemId}`, { quantity }),
+    api.put(`/api/cart/${getSessionId()}/items/${itemId}`, { quantity }),
   updateQuantity: (itemId, quantity) => 
-    api.put(`/cart/${getSessionId()}/items/${itemId}`, { quantity }),
+    api.put(`/api/cart/${getSessionId()}/items/${itemId}`, { quantity }),
   removeItem: (itemId) => 
-    api.delete(`/cart/${getSessionId()}/items/${itemId}`),
+    api.delete(`/api/cart/${getSessionId()}/items/${itemId}`),
   clear: () => 
-    api.delete(`/cart/${getSessionId()}`)
+    api.delete(`/api/cart/${getSessionId()}`)
 };
 
 // Orders API
 export const ordersAPI = {
   create: (billingDetails, paymentMethod) => 
     api.post('/orders', { sessionId: getSessionId(), billingDetails, paymentMethod }),
-  getAll: (filters = {}) => api.get('/orders', { params: filters }),
-  getById: (id) => api.get(`/orders/${id}`),
-  getByNumber: (orderNumber) => api.get(`/orders/number/${orderNumber}`)
+  getAll: (filters = {}) => api.get('/api/orders', { params: filters }),
+  getById: (id) => api.get(`/api/orders/${id}`),
+  getByNumber: (orderNumber) => api.get(`/api/orders/number/${orderNumber}`)
 };
 
 // Contact API - NEW
 export const contactAPI = {
-  submit: (data) => api.post('/contact', data),
-  getAll: () => api.get('/contact'),
-  getById: (id) => api.get(`/contact/${id}`),
-  delete: (id) => api.delete(`/contact/${id}`)
+  submit: (data) => api.post('/api/contact', data),
+  getAll: () => api.get('/api/contact'),
+  getById: (id) => api.get(`/api/contact/${id}`),
+  delete: (id) => api.delete(`/api/contact/${id}`)
 };
 
 export default api;
