@@ -55,8 +55,8 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
       const productsWithFullImage = response.data.data.map(product => ({
         ...product,
         image: product.image
-          ? `${BACKEND_URL}/uploads/${product.image}`
-          : '/placeholder.png'
+          // ? `${BACKEND_URL}/uploads/${product.image}`:
+          || '/placeholder.png'
       }));
 
       setProducts(productsWithFullImage);
