@@ -1,4 +1,4 @@
-import {  Routes, Route } from "react-router-dom";
+import {  Routes, Route ,Navigate} from "react-router-dom";
 import "./App.css";
 import CartSidebar from "./components/cart_sidebar/ShoppingCartSidebar";
 import { useState } from "react";
@@ -7,7 +7,14 @@ import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
 import Shop_page from "./pages/shop/Shop_page";
 import About_page from "./pages/about/About_page";
-
+import { AuthProvider } from './context/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
+import Layout from './components/admin/Layout';
+import Login from './pages/admin/Login';
+import Dashboard from './pages/admin/Dashboard';
+import Products from './pages/admin/Products';
+import Orders from './pages/admin/Orders';
+import Inquiries from './pages/admin/Inquiries';
 import ContactForm from "./pages/contact/ContactForm";
 import Single_product from "./pages/single_product/Single_product";
 import Cart from "./pages/cart/Cart";
@@ -34,7 +41,23 @@ function App() {
           <Route path="/about" element={<About_page />} />
           <Route path="/contact" element={<ContactForm />} />
           <Route path="/checkout" element={<Checkout />} />
-          
+           <Route path="/admin/login" element={<Login />} />
+             <Route
+            path="/admin/*"
+            element={
+              <ProtectedRoute>
+                <Layout>
+                  <Routes>
+                    <Route path="dashboard" element={<Dashboard />} />
+                    <Route path="products" element={<Products />} />
+                    <Route path="orders" element={<Orders />} />
+                    <Route path="inquiries" element={<Inquiries />} />
+                    <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
+                  </Routes>
+                </Layout>
+              </ProtectedRoute>
+            }
+          />
           {/* Dynamic product route - NEW */}
           <Route path="/product/:id" element={<Single_product />} />
           
