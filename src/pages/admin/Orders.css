@@ -759,3 +759,126 @@
   outline: 2px solid #f0a500;
   outline-offset: 2px;
 }
+/* ✅ EXTRA MOBILE RESPONSIVE FIXES — ORDERS PAGE (NO EXISTING CODE CHANGED) */
+
+/* Large tablets */
+@media (max-width: 1024px) {
+  .orders-page {
+    max-width: 100%;
+  }
+
+  .stats-grid {
+    gap: 16px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 640px) {
+  .page-header {
+    align-items: stretch;
+  }
+
+  .header-left p {
+    font-size: 14px;
+  }
+
+  .header-right {
+    gap: 10px;
+  }
+
+  .header-right button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stat-label {
+    font-size: 12px;
+  }
+
+  .stat-value {
+    font-size: 22px;
+  }
+
+  .stat-trend {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+
+  .controls-section {
+    gap: 10px;
+  }
+
+  .filter-group {
+    gap: 8px;
+  }
+
+  .filter-select {
+    min-width: 100%;
+    margin-top: 0; /* mobile pe alignment fix */
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .customer-name {
+    font-size: 13px;
+  }
+
+  .customer-email {
+    font-size: 11px;
+  }
+
+  .order-items {
+    font-size: 12px;
+  }
+
+  .order-total {
+    font-size: 14px;
+  }
+
+  .order-date {
+    font-size: 12px;
+  }
+
+  .status-badge {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .header-left h1 {
+    font-size: 20px;
+  }
+
+  .stats-grid {
+    gap: 12px;
+  }
+
+  .stat-card {
+    padding: 16px;
+  }
+
+  .search-wrapper input {
+    padding: 10px 12px 10px 40px;
+    font-size: 13px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 12px;
+    padding: 9px 14px;
+  }
+
+  .btn-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .pagination-info {
+    font-size: 13px;
+    text-align: center;
+  }
+}

@@ -383,4 +383,68 @@
 
 .settings-section {
   animation: fadeIn 0.3s ease;
+} 
+
+
+/* ✅ EXTRA MOBILE RESPONSIVE FIXES (NO EXISTING CODE CHANGED) */
+
+/* Tablets & small laptops */
+@media (max-width: 1024px) {
+  .settings-page {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .page-header {
+    align-items: stretch;
+  }
+
+  .header-icon {
+    display: none;
+  }
+
+  .settings-section h2 {
+    font-size: 18px;
+  }
+
+  .section-description {
+    font-size: 13px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+  }
+
+  .info-item {
+    padding: 12px;
+  }
+
+  .info-value {
+    font-size: 14px;
+  }
+
+  .role-badge,
+  .status-badge {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 360px) {
+  .page-header h1 {
+    font-size: 20px;
+  }
+
+  .btn-primary,
+  .btn-danger {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .settings-section {
+    border-radius: 8px;
+  }
 }

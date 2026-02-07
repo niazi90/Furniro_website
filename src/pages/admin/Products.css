@@ -940,3 +940,100 @@
   outline: 2px solid #f0a500;
   outline-offset: 2px;
 }
+
+
+/* ✅ EXTRA MOBILE RESPONSIVE FIXES — PRODUCTS PAGE (NO CHANGES ABOVE) */
+
+/* Large tablets */
+@media (max-width: 1024px) {
+  .products-page {
+    max-width: 100%;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 640px) {
+  .page-header {
+    align-items: stretch;
+  }
+
+  .header-left p {
+    font-size: 14px;
+  }
+
+  .header-right {
+    gap: 10px;
+  }
+
+  .header-right button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .products-controls {
+    gap: 12px;
+  }
+
+  .filter-group {
+    gap: 8px;
+  }
+
+  .filter-select {
+    min-width: 100%;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .product-name {
+    font-size: 13px;
+  }
+
+  .product-subtitle {
+    font-size: 11px;
+  }
+
+  .category-badge,
+  .status-badge,
+  .stock-badge {
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+
+  .price {
+    font-size: 14px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .header-left h1 {
+    font-size: 20px;
+  }
+
+  .products-controls {
+    margin-bottom: 16px;
+  }
+
+  .search-wrapper input {
+    padding: 10px 12px 10px 40px;
+    font-size: 13px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 12px;
+    padding: 9px 14px;
+  }
+
+  .btn-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .product-image-wrapper {
+    width: 40px;
+    height: 40px;
+  }
+}
