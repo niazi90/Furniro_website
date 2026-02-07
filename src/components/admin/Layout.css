@@ -66,12 +66,12 @@
 }
 
 .dashboard_nav-item:hover {
-  background-color: #f3f4f6;
+  background-color: #f0a500;
 }
 
 .dashboard_nav-item.active {
   background-color: #eff6ff;
-  color: #2563eb;
+  color: #f39c12;
 }
 
 .dashboard_nav-icon {
@@ -94,7 +94,7 @@
 .dashboard_user-avatar {
   width: 40px;
   height: 40px;
-  background-color: #2563eb;
+  background-color: #f0a500;
   color: #fff;
   font-weight: 600;
   border-radius: 50%;
@@ -110,7 +110,7 @@
 .user-name {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #111827;
+  color: #f39c12;
   margin: 0;
   white-space: nowrap;
   overflow: hidden;
@@ -132,7 +132,7 @@
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  color: #dc2626;
+  color: #f0a500;
   border-radius: 8px;
   background: none;
   border: none;
@@ -155,6 +155,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  margin-left: 0px;
 }
 
 .dashboard_header {
@@ -180,7 +181,7 @@
   background: none;
   border: none;
   cursor: pointer;
-  color: #6b7280;
+  color: #806b6b;
 }
 
 .dashboard_search-bar {
@@ -207,8 +208,8 @@
 }
 
 .dashboard_search-input:focus {
-  border-color: #2563eb;
-  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+  border-color: #f0a500;
+  box-shadow: 0 0 0 2px rgba(240, 165, 0, 0.3);
 }
 
 .dashboard_notification-btn {
@@ -225,7 +226,7 @@
   right: 4px;
   width: 8px;
   height: 8px;
-  background-color: #ef4444;
+  background-color: #e9c420;
   border-radius: 50%;
 }
 

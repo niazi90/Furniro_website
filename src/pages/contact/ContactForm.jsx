@@ -102,44 +102,44 @@ const ContactForm = () => {
   return (
     <>
       <Banner_components heading={"Contact"} para={"contact"} />
-      <div className="contact-container">
-        <div className="contact-content">
-          <div className="contact-header">
+      <div className="contact-container_h">
+        <div className="contact-content_h">
+          <div className="contact-header_h">
             <h2>Get In Touch With Us</h2>
-            <p className="contact-description">
+            <p className="contact-description_h">
               For More Information About Our Product & Services. Please Feel Free To Drop Us
               An Email. Our Staff Always Be There To Help You Out. Do Not Hesitate!
             </p>
           </div>
 
-          <div className="contact-details">
-            <div className='contact_icon'>
-              <div className='info-section-icon'><FaLocationDot /></div>
-              <div className='info-section-icon'><FaPhoneAlt /></div>
-              <div className='info-section-icon'><GoClockFill /></div>
+          <div className="contact-details_h">
+            <div className='contact_icon_h'>
+              <div className='info-section-icon_h'><FaLocationDot /></div>
+              <div className='info-section-icon_h'><FaPhoneAlt /></div>
+              <div className='info-section-icon_h'><GoClockFill /></div>
             </div>
 
-            <div className="contact-info">
-              <div className="info-section">
+            <div className="contact-info_h">
+              <div className="info-section_h">
                 <h3>Address</h3>
                 <p>236 5th SE Avenue, New York NY10000, United States</p>
               </div>
 
-              <div className="info-section">
+              <div className="info-section_h">
                 <h3>Phone</h3>
                 <p>Mobile: +(84) 546-6789</p>
                 <p>Hotline: +(84) 456-6789</p>
               </div>
 
-              <div className="info-section">
+              <div className="info-section_h">
                 <h3>Working Time</h3>
                 <p>Monday-Friday: 9:00 - 22:00</p>
                 <p>Saturday-Sunday: 9:00 - 21:00</p>
               </div>
             </div>
 
-            <div className="contact-form-container">
-              <form className="contact-form" onSubmit={handleSubmit}>
+            <div className="contact-form-container_h">
+              <form className="contact-form_h" onSubmit={handleSubmit}>
                 
                 {/* Status Message */}
                 {submitStatus.message && (
@@ -155,7 +155,7 @@ const ContactForm = () => {
                   </div>
                 )}
 
-                <div className="form-group">
+                <div className="form-group_h">
                   <label htmlFor="name">Your name *</label>
                   <input
                     type="text"
@@ -169,7 +169,7 @@ const ContactForm = () => {
                   />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group_h">
                   <label htmlFor="email">Email address *</label>
                   <input
                     type="email"
@@ -183,7 +183,7 @@ const ContactForm = () => {
                   />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group_h">
                   <label htmlFor="subject">
                     Subject <span className="optional">(Optional)</span>
                   </label>
@@ -198,7 +198,7 @@ const ContactForm = () => {
                   />
                 </div>
 
-                <div className="form-group">
+                <div className="form-group_h">
                   <label htmlFor="message">Message *</label>
                   <textarea
                     id="message"
@@ -214,7 +214,7 @@ const ContactForm = () => {
 
                 <button 
                   type="submit" 
-                  className="submit-btn"
+                  className="submit-btn_h"
                   disabled={submitting}
                   style={{
                     opacity: submitting ? 0.6 : 1,

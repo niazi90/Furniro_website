@@ -34,42 +34,42 @@ const Filter_component = ({
   };
 
   return (
-    <div className="filter-wrapper">
-      <div className="filter-header">
+    <div className="filter-wrapper_h">
+      <div className="filter-header_h">
         {/* Left Side */}
-        <div className="filter-left">
-          <div className="filter-icon-box">
+        <div className="filter-left_h">
+          <div className="filter-icon-box_h">
             <img src={filter_svg} alt={filter_text} />
           </div>
-          <span className="filter-file-name">{filter_heading}</span>
+          <span className="filter-file-name_h">{filter_heading}</span>
           
-          <div className="filter-icon-box">
+          <div className="filter-icon-box_h">
             <img src={menu_svg} alt={menu_text} />
           </div>
-          <span className="filter-file-name">{text}</span>
+          <span className="filter-file-name_h">{text}</span>
 
-          <div className="filter-icon-box">
+          <div className="filter-icon-box_h">
             <img src={destop_svg} alt={destop_text} />
           </div>
 
-          <div className="filter-divider"></div>
+          <div className="filter-divider_h"></div>
 
-          <div className="filter-info">
-            <span className="filter-showing">{Showing_text}</span>
-            <span className="filter-range">{page_first_number}</span>
-            <span className="filter-total">{page_last_number}</span>
+          <div className="filter-info_h">
+            <span className="filter-showing_h">{Showing_text}</span>
+            <span className="filter-range_h">{page_first_number}</span>
+            <span className="filter-total_h">{page_last_number}</span>
           </div>
         </div>
 
         {/* Right Side - with working dropdowns */}
-        <div className="filter-right">
-          <div className="filter-controls">
+        <div className="filter-right_h">
+          <div className="filter-controls_h">
             {righttext && short_by && (
               <>
                 {/* Category Select */}
-                <span className="filter-label">{righttext}</span>
+                <span className="filter-label_h">{righttext}</span>
                 <select
-                  className="filter-select"
+                  className="filter-select_h"
                   value={filters.category}
                   onChange={(e) => handleFilterChange('category', e.target.value)}
                 >
@@ -82,9 +82,9 @@ const Filter_component = ({
                 </select>
 
                 {/* Sort Select */}
-                <span className="filter-label">{short_by}</span>
+                <span className="filter-label_h">{short_by}</span>
                 <select
-                  className="filter-select"
+                  className="filter-select_h"
                   value={filters.sort}
                   onChange={(e) => handleFilterChange('sort', e.target.value)}
                 >

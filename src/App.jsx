@@ -21,6 +21,8 @@ import Cart from "./pages/cart/Cart";
 import Checkout from "./pages/checkout/Checkout";
 import Notfond from "./components/notfond/Notfond";
 import ScrollToTop from "./components/scrol/ScrollToTop";
+import Customers from "./pages/admin/Customers";
+import Settings from "./pages/admin/Settings";
 
 
 
@@ -52,6 +54,8 @@ function App() {
                     <Route path="products" element={<Products />} />
                     <Route path="orders" element={<Orders />} />
                     <Route path="inquiries" element={<Inquiries />} />
+                    <Route path="customers" element={<Customers />} />
+<Route path="settings" element={<Settings />} />
                     <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
                   </Routes>
                 </Layout>
@@ -65,7 +69,7 @@ function App() {
           <Route path="/single_product" element={<Single_product />} />
           
           <Route path="/cart" element={<Cart/>} />
-          <Route path="*" element={<Notfond />} />
+          {/* <Route path="*" element={<Notfond />} /> */}
 
           
         

@@ -114,7 +114,7 @@ const Login = () => {
             </div>
 
             {/* Button */}
-            <button type="submit" disabled={loading}>
+            <button  className="dashboard_button" type="submit" disabled={loading}>
               {loading ? "Signing in..." : "Sign In"}
             </button>
           </form>

@@ -1,4 +1,4 @@
-.contact-container {
+.contact-container_h {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
   max-width: 1200px;
   margin: 0 auto;
@@ -7,12 +7,12 @@
   background-color: #fff;
 }
 
-.contact-header {
+.contact-header_h {
   text-align: center;
   margin-bottom: 80px;
 }
 
-.contact-header h2 {
+.contact-header_h h2 {
   font-size: 36px;
   font-weight: 700;
   margin-bottom: 24px;
@@ -20,7 +20,7 @@
   letter-spacing: -0.5px;
 }
 
-.contact-description {
+.contact-description_h {
   font-size: 17px;
   line-height: 1.8;
   color: #555;
@@ -29,25 +29,25 @@
   font-weight: 400;
 }
 
-.contact-details {
+.contact-details_h {
  display: grid;
     grid-template-columns: 0.1fr 1fr 1fr;
     gap: 23px;
     align-items: start;
 }
 
-.contact-info {
+.contact-info_h {
   display: flex;
   flex-direction: column;
   
                        
-}.contact_icon{
+}.contact_icon_h{
   width: 30px;
   height: 336px;
   
 }
 
-.info-section-icon{
+.info-section-icon_h{
      width: 11px;
     height: 145px;
     display: flex;
@@ -55,7 +55,7 @@
     justify-content: space-between;
 }
 
-.info-section h3 {
+.info-section_h h3 {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 16px;
@@ -65,25 +65,25 @@
 }
 
 
-.info-section p {
+.info-section_h p {
   font-size: 16px;
   line-height: 1.7;
   color: #666;
   margin-bottom: 12px;
 }
 
-.contact-form {
+.contact-form_h {
   display: flex;
   flex-direction: column;
   gap: 32px;
 }
 
-.form-group {
+.form-group_h {
   display: flex;
   flex-direction: column;
 }
 
-.form-group label {
+.form-group_h label {
   font-size: 15px;
   font-weight: 500;
   margin-bottom: 10px;
@@ -91,15 +91,15 @@
   display: block;
 }
 
-.optional {
+.optional_h {
   color: #888;
   font-weight: 400;
   font-size: 14px;
   font-style: italic;
 }
 
-.form-group input,
-.form-group textarea {
+.form-group_h input,
+.form-group_h textarea {
   padding: 16px 20px;
   border: 2px solid #e1e1e1;
   border-radius: 8px;
@@ -109,27 +109,27 @@
   background-color: #f9f9f9;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
+.form-group_h input:focus,
+.form-group_h textarea:focus {
   outline: none;
-  border-color: #555;
+  border-color: #f39c12;
   background-color: #fff;
   box-shadow: 0 0 0 3px rgba(85, 85, 85, 0.1);
 }
 
-.form-group input::placeholder,
-.form-group textarea::placeholder {
+.form-group_h input::placeholder,
+.form-group_h textarea::placeholder {
   color: #999;
   font-weight: 400;
 }
 
-.form-group textarea {
+.form-group_h textarea {
   resize: vertical;
   min-height: 120px;
   line-height: 1.6;
 }
 
-.submit-btn {
+.submit-btn_h {
   background-color: #f39c12;
   color: white;
   border: none;
@@ -144,13 +144,13 @@
   letter-spacing: 0.5px;
 }
 
-.submit-btn:hover {
-  background-color: #333;
+.submit-btn_h:hover {
+  background-color: #e67e22;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.submit-btn:active {
+.submit-btn_h:active {
   transform: translateY(0);
 }
 
@@ -163,16 +163,16 @@
 /* Tablet & below */
 @media (max-width: 992px) {
 
-  .contact-details {
+  .contact-details_h {
     grid-template-columns: 40px 1fr;
     gap: 30px;
   }
 
-  .contact_icon {
+  .contact_icon_h {
     height: auto;
   }
 
-  .info-section-icon {
+  .info-section-icon_h {
     height: auto;
     gap: 40px;
   }
@@ -181,24 +181,24 @@
 /* Mobile */
 @media (max-width: 768px) {
 
-  .contact-details {
+  .contact-details_h {
     grid-template-columns: 1fr;
     gap: 40px;
   }
 
-  .contact_icon {
+  .contact_icon_h {
     display: none; /* icons column hide on mobile */
   }
 
-  .info-section-icon {
+  .info-section-icon_h {
     display: none;
   }
 
-  .contact-info {
+  .contact-info_h {
     gap: 32px;
   }
 
-  .submit-btn {
+  .submit-btn_h {
     align-self: stretch;
     text-align: center;
   }
@@ -207,23 +207,23 @@
 /* Small Mobile */
 @media (max-width: 480px) {
 
-  .contact-header h2 {
+  .contact-header_h h2 {
     line-height: 1.2;
   }
 
-  .contact-description {
+  .contact-description_h {
     line-height: 1.6;
   }
 
-  .contact-info {
+  .contact-info_h {
     gap: 28px;
   }
 
-  .form-group label {
+  .form-group_h label {
     font-size: 14px;
   }
 
-  .submit-btn {
+  .submit-btn_h {
     font-size: 16px;
     padding: 16px;
   }

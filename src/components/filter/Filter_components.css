@@ -1,4 +1,4 @@
-.filter-wrapper {
+.filter-wrapper_h {
   width: 100%;
   max-width: 1330px;
   background: #F9F1E7;
@@ -6,19 +6,19 @@
   padding: 16px 24px;
 }
 
-.filter-header {
+.filter-header_h {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.filter-left {
+.filter-left_h {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.filter-icon-box {
+.filter-icon-box_h {
   width: 32px;
   height: 32px;
   display: flex;
@@ -26,52 +26,52 @@
   justify-content: center;
 }
 
-.filter-icon {
+.filter-icon_h {
   width: 20px;
   height: 20px;
 }
 
-.filter-file-name {
+.filter-file-name_h {
   font-size: 18px;
   font-weight: 600;
 }
 
-.filter-divider {
+.filter-divider_h {
   width: 1px;
   height: 24px;
   background: #e2e8f0;
 }
 
-.filter-info {
+.filter-info_h {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.filter-showing,
-.filter-total {
+.filter-showing_h,
+.filter-total_h {
   font-size: 14px;
   color: #718096;
 }
 
-.filter-pagination {
+.filter-pagination_h {
   display: flex;
   align-items: center;
   border: 1px solid #e2e8f0;
   padding: 4px;
 }
 
-.filter-arrow {
+.filter-arrow_h {
   background: none;
   border: none;
   cursor: pointer;
 }
 
-.filter-range {
+.filter-range_h {
   padding: 0 10px;
 }
 
-.filter-right {
+.filter-right_h {
   display: flex;
   margin-right: 25px;
 }
@@ -82,95 +82,95 @@
   align-items: center;
 }
 
-.filter-label {
+.filter-label_h {
   font-size: 14px;
 }
 
-.filter-select {
+.filter-select_h {
   border: 1px solid #e2e8f0;
   padding: 6px 12px;
   background-color:white;
 }
 
-.filter-value {
+.filter-value_h {
   font-size: 14px;
 }
 
 
 
 @media (max-width: 992px) {
-  .filter-wrapper {
+  .filter-wrapper_h {
     padding: 12px 16px;
   }
 
-  .filter-file-name {
+  .filter-file-name_h {
     font-size: 16px;
   }
 
-  .filter-left {
+  .filter-left_h {
     gap: 12px;
   }
 
-  .filter-icon-box {
+  .filter-icon-box_h {
     width: 28px;
     height: 28px;
   }
 
-  .filter-icon {
+  .filter-icon_h {
     width: 18px;
     height: 18px;
   }
 
-  .filter-divider {
+  .filter-divider_h {
     height: 20px;
   }
 
-  .filter-info {
+  .filter-info_h {
     gap: 10px;
   }
 
-  .filter-showing,
-  .filter-total {
+  .filter-showing_h,
+  .filter-total_h {
     font-size: 13px;
   }
 
-  .filter-right {
+  .filter-right_h {
     margin-right: 15px;
     flex-wrap: wrap;
     gap: 10px;
   }
 
-  .filter-controls {
+  .filter-controls_h {
     gap: 10px;
   }
 
-  .filter-label,
-  .filter-value {
+  .filter-label_h,
+  .filter-value_h {
     font-size: 13px;
   }
 }
 
 
 @media (max-width: 768px) {
-  .filter-wrapper {
+  .filter-wrapper_h {
     padding: 10px 12px;
   }
 
-  .filter-header {
+  .filter-header_h {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
 
-  .filter-left {
+  .filter-left_h {
     gap: 8px;
   }
 
-  .filter-file-name {
+  .filter-file-name_h {
     font-size: 14px;
   }
 
-  .filter-divider {
+  .filter-divider_h {
     display: none; 
   }
 
@@ -179,12 +179,12 @@
     flex-wrap: wrap;
   }
 
-  .filter-showing,
-  .filter-total {
+  .filter-showing_h,
+  .filter-total_h {
     font-size: 12px;
   }
 
-  .filter-right {
+  .filter-right_h {
     margin-right: 0;
     width: 100%;
     justify-content: space-between;
@@ -192,58 +192,58 @@
     gap: 8px;
   }
 
-  .filter-controls {
+  .filter-controls_h {
     width: 100%;
     justify-content: flex-start;
     gap: 8px;
   }
 
-  .filter-label,
-  .filter-value {
+  .filter-label_h,
+  .filter-value_h {
     font-size: 12px;
   }
 
-  .filter-select {
+  .filter-select_h {
     padding: 5px 8px;
   }
 }
 
 @media (max-width: 480px) {
-  .filter-wrapper {
+  .filter-wrapper_h {
     padding: 8px 10px;
   }
 
-  .filter-file-name {
+  .filter-file-name_h {
     font-size: 13px;
   }
 
-  .filter-left {
+  .filter-left_h {
     gap: 6px;
   }
 
-  .filter-info {
+  .filter-info_h {
     font-size: 11px;
     gap: 6px;
   }
 
-  .filter-right {
+  .filter-right_h {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
   }
 
-  .filter-controls {
+  .filter-controls_h {
     flex-direction: column;
     align-items: flex-start;
     gap: 6px;
   }
 
-  .filter-label,
-  .filter-value {
+  .filter-label_h,
+  .filter-value_h {
     font-size: 11px;
   }
 
-  .filter-select {
+  .filter-select_h {
     padding: 4px 6px;
   }
 }
