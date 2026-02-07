@@ -3,7 +3,7 @@ import { productsAPI, cartAPI } from '../../services/api';
 import './Productsection.css';
 import { useNavigate } from 'react-router-dom';
 
-// ✅ Use the backend URL from environment variable for Vercel and local
+//  Use the backend URL from environment variable for Vercel and local
 const BACKEND_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
 
 const ProductSection = ({ text, filters, onPaginationChange }) => {
@@ -44,14 +44,14 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
 
       const response = await productsAPI.getAll(params);
 
-      // ✅ FIX: Check if data exists before mapping
+      //  FIX: Check if data exists before mapping
       if (!response.data || !response.data.data) {
         console.error('Invalid API response structure:', response.data);
         setProducts([]);
         return;
       }
 
-      // ✅ Update images to use BACKEND_URL dynamically
+      //  Update images to use BACKEND_URL dynamically
       const productsWithFullImage = response.data.data.map(product => ({
         ...product,
         image: product.image
@@ -73,7 +73,7 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
     } catch (error) {
       console.error('Error fetching products:', error);
       console.error('Error details:', error.response?.data);
-      setProducts([]); // ✅ Set empty array on error
+      setProducts([]); //  Set empty array on error
     } finally {
       setLoading(false);
     }
@@ -92,7 +92,7 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
   };
 
   const handleProductClick = (productId) => {
-    // ✅ FIXED: Removed /api/ from route - this was the main bug
+    //  FIXED: Removed /api/ from route - this was the main bug
     navigate(`/product/${productId}`);
   };
 
@@ -126,7 +126,7 @@ const ProductSection = ({ text, filters, onPaginationChange }) => {
     return pages;
   };
 
-  // ✅ FIX: Show message if loading or no products
+  //  : Show message if loading or no products
   if (loading) return <div style={{ textAlign: 'center', padding: '40px' }}>Loading products...</div>;
   
   if (products.length === 0) {
