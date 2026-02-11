@@ -17,4 +17,4 @@ If you are developing a production application, we recommend using TypeScript wi
 
 live link
 
-https://furniro-website-2d3y5qszh-azhar-iqbal90.vercel.app/
+(https://furniro-website-six.vercel.app/)
